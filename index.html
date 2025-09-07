@@ -33,7 +33,7 @@
   <body>
     <header>
       <!-- navbar -->
-      <div class="navbar bg-base-100 shadow-sm bg-green-700 px-20">
+      <div class="navbar bg-base-100 shadow-sm bg-green-700 xl:px-20">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -75,25 +75,28 @@
           </ul>
         </div>
         <div class="navbar-end">
-          <button class="btn btn-warning text-green-700 rounded-3xl">
+          <button class="btn btn-warning text-green-700 rounded-3xl inter-font">
             Plant a Tree
           </button>
         </div>
       </div>
       <!-- banner -->
 
-      <section class="bg-[#cff0dc]">
-        <img src="assets/hero-leaf1.png" alt="" />
-        <div>
-          <h1>Plant a Tree, Grow a Future</h1>
-          <p>
+      <section class="bg-[#cff0dc] flex justify-between h-[383px]">
+        <img class="hidden xl:block" src="assets/hero-leaf1.png" alt="" />
+        <div class="h-[100%] flex flex-col justify-center items-center">
+          <h1 class="inter-font text-5xl text-center">
+            Plant a Tree, Grow a Future
+          </h1>
+          <p class="text-center inter-font mt-2">
             Join our mission to plant 1 million trees and make the Earth greener
             for future generations.
           </p>
-          <button class="btn btn-warning text-green-700 rounded-3xl">
+          <button class="btn btn-warning text-green-700 rounded-3xl inter-font mt-6">
             Plant a Tree
           </button>
         </div>
+        <img class="hidden xl:block" src="assets/hero-leaf2.png" alt="" />
       </section>
     </header>
     <!-- linking js -->
