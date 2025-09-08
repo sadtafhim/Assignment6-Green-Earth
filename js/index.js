@@ -52,7 +52,7 @@ const loadTrees = (datas, container) => {
     newdiv.innerHTML = `
     <div class="bg-white w-[300px] p-5">
               <img class="w-[280px] h-[190px]" src="${data.image}" alt="" />
-              <h1 class="inter-font text-sm">${data.name}</h1>
+              <h1 onclick="loadTreeDetail(${data.id})" class="inter-font text-sm">${data.name}</h1>
               <p class="inter-font text-xs">
                 ${data.description}
               </p>
@@ -68,4 +68,43 @@ const loadTrees = (datas, container) => {
             </div>`;
     container.appendChild(newdiv);
   }
+};
+
+// tree detail modal
+
+const loadTreeDetail = (id) => {
+  const TreeUrl = `https://openapi.programming-hero.com/api/plant/${id}`;
+
+  fetch(TreeUrl)
+    .then((res) => res.json())
+    .then((data) => getTreeDetails(data.plants));
+};
+
+const getTreeDetails = (data) => {
+  const modalContainer = document.getElementById("my_modal_5");
+  modalContainer.innerHTML = "";
+
+  const newdiv = document.createElement("div");
+
+  newdiv.innerHTML = `
+  <div class="modal-box flex flex-col">
+          <img class="w-[100%] h-[100%]" src="${data.image}" alt="" />
+              <h1 class="inter-font text-sm">${data.name}</h1>
+              <p class="inter-font text-xs">
+                ${data.description}
+              </p>
+              <div class="flex justify-between items-center">
+                <button class="btn btn-soft btn-success rounded-md">
+                  ${data.category}
+                </button>
+                <h4>৳${data.price}</h4>
+              </div>
+              <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+        </div>`;
+  modalContainer.appendChild(newdiv);
+  modalContainer.showModal();
 };
