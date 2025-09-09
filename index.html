@@ -30,10 +30,10 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
+  <body class="overflow-x-hidden">
     <header>
       <!-- navbar -->
-      <div class="navbar bg-base-100 shadow-sm bg-green-700 xl:px-20">
+      <div class="navbar bg-base-100 shadow-sm bg-green-700 lg:px-20">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -84,7 +84,7 @@
     <main class="bg-green-50">
       <!-- banner -->
       <section class="bg-[#cff0dc] flex justify-between h-[383px]">
-        <img class="hidden xl:block" src="assets/hero-leaf1.png" alt="" />
+        <img class="hidden lg:block" src="assets/hero-leaf1.png" alt="" />
         <div class="h-[100%] flex flex-col justify-center items-center">
           <h1 class="inter-font text-5xl text-center justify-center">
             Plant a Tree, Grow a Future
@@ -99,21 +99,40 @@
             Plant a Tree
           </button>
         </div>
-        <img class="hidden xl:block" src="assets/hero-leaf2.png" alt="" />
+        <img class="hidden lg:block" src="assets/hero-leaf2.png" alt="" />
       </section>
       <!-- Trees Section -->
-      <section class="w-7xl mx-auto">
-        <h1 class="text-center">Choose Your Trees</h1>
-        <div class="flex justify-between">
+      <section class="lg:max-w-[1650px] mx-auto mt-[100px]">
+        <h1 class="text-center inter-font text-4xl font-semibold mb-10">
+          Choose Your Trees
+        </h1>
+        <div class="lg:flex justify-between gap-2">
           <!-- categories -->
-          <div id="categories" class="w-w-[15%]">
+          <div id="categories" class="text-center lg:w-[15%]">
             <h1 class="inter-font">Categories</h1>
             <p></p>
           </div>
+          <!-- spinner -->
+          <div
+            id="spinner"
+            class="mx-auto flex justify-center items-center py-10 w-[75%] hidden"
+          >
+            <span class="loading loading-spinner loading-xl"></span>
+          </div>
           <!-- trees -->
-          <div id="trees" class="w-[] grid grid-cols-3"></div>
+          <div
+            id="trees"
+            class="w-[75%] grid grid-cols-1 lg:grid-cols-3 mx-auto gap-3"
+          ></div>
           <!-- cart -->
-          <div class="w-[15%] bg-green-300">bye</div>
+          <div class="w-[100%] lg:w-[15%] bg-white rounded-xl p-3">
+            <h1 class="inter-font text-xl font-semibold">Your Cart</h1>
+            <!-- cart items -->
+            <div id="cart"></div>
+            <h1 class="flex justify-between inter-font font-medium">
+              Total: <span id="cart-total">0</span>
+            </h1>
+          </div>
         </div>
       </section>
       <!-- about section -->
@@ -121,20 +140,20 @@
         <h1 class="text-center inter-font font-semibold text-3xl">
           About the Campaign
         </h1>
-        <div class="xl:flex gap-5 items-center mt-10">
+        <div class="lg:flex gap-5 items-center mt-10">
           <img
-            class="xl:max-w-lg max-h-lg rounded-lg"
+            class="lg:max-w-lg max-h-lg rounded-lg"
             src="assets/about.png"
             alt=""
           />
-          <div class="m-5 xl:m-0">
-            <p class="inter-font text-center xl:text-left">
+          <div class="m-5 lg:m-0">
+            <p class="inter-font text-center lg:text-left">
               Green Earth is a global tree plantation initiative dedicated to
               fighting climate change. Since our start, we've planted over
               500,000 trees worldwide. By joining our campaign, you help restore
               forests, create habitats for wildlife, and combat global warming.
             </p>
-            <ul class="list-disc list-inside text-center xl:text-left">
+            <ul class="list-disc list-inside text-center lg:text-left">
               <li class="inter-font">Restoration of natural habitats</li>
               <li class="inter-font">Improvement of air quality</li>
               <li class="inter-font">Support for local communities</li>
@@ -144,12 +163,12 @@
       </section>
       <!-- Impact Section -->
       <section
-        class="xl:h-[436px] bg-[#cff0dc] flex flex-col justify-center items-center mt-12 p-5 xl:p-0"
+        class="lg:h-[436px] bg-[#cff0dc] flex flex-col justify-center items-center mt-12 p-5 lg:p-0"
       >
         <h1 class="text-3xl inter-font font-semibold">Our Impact</h1>
-        <div class="flex flex-col xl:flex-row gap-5 mt-4">
+        <div class="flex flex-col lg:flex-row gap-5 mt-4">
           <div
-            class="w-[400px] h-28 xl:h-36 bg-white rounded-xl flex flex-col justify-center items-center"
+            class="max-w-[400px] lg:w-[400px] h-28 lg:h-36 bg-white rounded-xl flex flex-col justify-center items-center"
           >
             <h1 class="text-3xl text-green-700 font-semibold inter-font">
               500k+
@@ -157,7 +176,7 @@
             <p class="inter-font text-[#1F2937]">Trees Planted</p>
           </div>
           <div
-            class="w-[400px] h-28 xl:h-36 bg-white rounded-xl flex flex-col justify-center items-center"
+            class="max-w-[400px] lg:w-[400px] h-28 lg:h-36 bg-white rounded-xl flex flex-col justify-center items-center"
           >
             <h1 class="text-3xl text-green-700 font-semibold inter-font">
               120+
@@ -165,7 +184,7 @@
             <p class="inter-font text-[#1F2937]">Communities Involved</p>
           </div>
           <div
-            class="w-[400px] h-28 xl:h-36 bg-white rounded-xl flex flex-col justify-center items-center"
+            class="max-w-[400px] lg:w-[400px] h-28 lg:h-36 bg-white rounded-xl flex flex-col justify-center items-center"
           >
             <h1 class="text-3xl text-green-700 font-semibold inter-font">
               30+
@@ -182,20 +201,20 @@
           Plant a Tree Today
         </h1>
         <div
-          class="w-[400px] xl:w-[650px] h-[311px] bg-green-700 flex flex-col justify-center items-center gap-3 rounded-xl"
+          class="w-full max-w-[400px] lg:max-w-[650px] h-[311px] bg-green-700 flex flex-col justify-center items-center gap-3 rounded-xl"
         >
           <input
-            class="bg-white w-[300px] xl:w-[570px] h-12 border-white rounded-md pl-4"
+            class="bg-white w-[300px] lg:w-[570px] h-12 border-white rounded-md pl-4"
             placeholder="Your Name"
             type="text"
           />
           <input
-            class="bg-white w-[300px] xl:w-[570px] h-12 border-white rounded-md pl-4"
+            class="bg-white w-[300px] lg:w-[570px] h-12 border-white rounded-md pl-4"
             placeholder="Your Email Address"
             type="text"
           />
           <select
-            class="select select-bordered w-[300px] xl:w-[570px] h-12 border-white rounded-md"
+            class="select select-bordered w-[300px] lg:w-[570px] h-12 border-white rounded-md"
           >
             <option disabled selected>Number of Trees</option>
             <option value="1">1 Tree</option>
@@ -205,15 +224,17 @@
             <option value="5">5 Trees</option>
           </select>
           <button
-            class="btn btn-warning text-green-700 rounded-3xl inter-font w-[300px] xl:w-[570px]"
+            class="btn btn-warning text-green-700 rounded-3xl inter-font w-[300px] lg:w-[570px]"
           >
             Donate Now
           </button>
         </div>
       </section>
       <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
-      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-      </dialog>
+      <dialog
+        id="my_modal_5"
+        class="modal modal-bottom sm:modal-middle"
+      ></dialog>
     </main>
     <footer
       class="footer footer-horizontal footer-center bg-green-900 text-base-content p-5"
